@@ -10,7 +10,7 @@ const ViewBlogs = () => {
 
   return (
     <>
-      <img src={back} alt="Back" onClick={()=> history('../Dashboard')} />
+      <img src={back} alt="Back" onClick={()=> history('/Admin')} />
       <section className="viewBlogWrap">
         <article onClick={()=>history('../Manage-post')}>
           <img src={blogIcon} alt="Blog" />

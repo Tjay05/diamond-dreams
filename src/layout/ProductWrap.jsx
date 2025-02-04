@@ -10,8 +10,6 @@ const ProductWrapper = () => {
   const token = JSON.parse(tosinToken);
   const [products , setProducts] = useState([])
 
-  
-
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -42,7 +40,7 @@ const ProductWrapper = () => {
 
   return (
     <>
-      <img src={back} alt="Back" onClick={()=> history('Dashboard')} />
+      <img src={back} alt="Back" onClick={()=> history('/Admin')} />
       <nav className="btmNav">
         <h1>All products</h1>
         <button onClick={()=> history('New-product')}><img src={plusIcon} alt="Plus" /> New product</button>

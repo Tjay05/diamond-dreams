@@ -17,12 +17,10 @@ const CreateBlog = () => {
   const handlePicUpdate = (e)=> {
     const file = e.target.files[0];
     if (file) {
-      setSelectedImage(true)
+      setSelectedImage(true);
       setImage(file)
-      // console.log(file)
     }
   }
-
 
   const handleUpload = async () => {
     try {

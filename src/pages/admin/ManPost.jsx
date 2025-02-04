@@ -9,9 +9,7 @@ const ManagePost = () => {
   const tosinToken = localStorage.getItem("token");
   const token = JSON.parse(tosinToken);
 
-
   const handleDelete = async (itemId) => {
-    // 
     try {
       const response = await fetch(`https://diamondreams.onrender.com/admin/blog/${itemId}`, {
         method: "DELETE",

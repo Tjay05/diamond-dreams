@@ -34,7 +34,7 @@ const EnrollWrapper = () => {
 
   return (
     <>
-      <img src={back} alt="Back" onClick={()=> history('Dashboard')} />
+      <img src={back} alt="Back" onClick={()=> history('/Admin')} />
       <nav className="btmNav">
         <h1>All enrollments</h1>
         {location.pathname.includes('Pending') &&<button>Accept all</button>}

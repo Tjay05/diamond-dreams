@@ -34,7 +34,7 @@ const OrdersWrapper = () => {
 
   return (
     <>
-      <img src={back} alt="Back" onClick={()=> history('Dashboard')} />
+      <img src={back} alt="Back" onClick={()=> history('/Admin')} />
       <nav className="btmNav">
         <h1>All orders</h1>
       </nav>

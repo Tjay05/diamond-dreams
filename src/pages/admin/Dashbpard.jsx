@@ -12,10 +12,8 @@ const Dashboard = () => {
   const [productCount, setProductCount] = useState(0)
   const [shopCount, setShopCount] = useState(0)
   
-
   const tosinToken = localStorage.getItem("token");
   const token = JSON.parse(tosinToken);
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -61,16 +59,13 @@ const Dashboard = () => {
     fetchData();
   }, []);
 
-
-
-
   return (
     <>
       <section className='dashBoardSection'>
         <h2>Welcome Back!</h2>
         <div className="grid-icons">
           <article>
-            <Link to='../Gowns'>
+            <Link to='Gowns'>
               <img src={prodIcon} alt="Product" />
               <p>Total Products</p>
               <span>{productCount}</span>
@@ -78,7 +73,7 @@ const Dashboard = () => {
             </Link>
           </article>
           <article>
-            <Link to='../Pending' onClick={()=>window.alert('Enable Desktop Site to get the complete view')}>
+            <Link to='Pending' /*onClick={()=>window.alert('Enable Desktop Site to get the complete view')}*/>
               <img src={enrollIcon} alt="Enrol" />
               <p>Total Enrolment</p>
               <span>{enrollmentCount}</span>
@@ -86,7 +81,7 @@ const Dashboard = () => {
             </Link>
           </article>
           <article>
-            <Link to='../Pending-orders' onClick={()=>window.alert('Enable Desktop Site to get the complete view')}>
+            <Link to='Pending-orders' /*onClick={()=>window.alert('Enable Desktop Site to get the complete view')}*/>
               <img src={cartIcon} alt="Orders" />
               <p>Total Orders</p>
               <span>{ shopCount}</span>
@@ -94,7 +89,7 @@ const Dashboard = () => {
             </Link>
           </article>
           <article>
-            <Link to='../Blog-options'>
+            <Link to='Blog-options'>
               <img src={LikeIcon} alt="Like" />
               <p>Total Blogs</p>
               <span>{blogCount}</span>
