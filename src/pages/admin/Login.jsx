@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import LightLogo from '../../assets/icons/light-logo.svg';
+
 const Login = () => {
   const history = useNavigate();
   const [email, setEmail] = useState('');
@@ -18,7 +20,6 @@ const Login = () => {
     e.preventDefault();
     setLoginIn(true);
     const formData = constructFormData();
-    // console.log(formData);
   
     try {
       const response = await fetch('https://diamondreams.onrender.com/admin/login', {
@@ -35,7 +36,7 @@ const Login = () => {
         setPassword('');
         setLoginIn(false);
         localStorage.setItem('token', JSON.stringify(data));
-        history('Dashboard')
+        history('Admin')
       } else {
         setEmail('');
         setPassword('');
@@ -54,18 +55,30 @@ const Login = () => {
 
   return (
     <>
-      <section className="adminLogin">
-        <h2>Hello!</h2>
-        <form onSubmit={handleSubmit}>
-          <p>Please input your details</p>
-          <label htmlFor="Email" >Email</label>
-          <input type="text" id="Name" placeholder="Email" value= {email}  onChange={e => setEmail(e.target.value)}/>
-          <label htmlFor="pword">Password</label>
-          <input type="password" id="pword" placeholder="Password" value={password}  onChange={e => setPassword(e.target.value)} />
-          <button disabled={loginIn}>{loginIn ? 'Login you in...' : 'Continue'}</button>
-          <p id="errorMessage"></p>
-        </form>
-      </section>
+      <header className="adminHeader">
+        <nav className="rule">
+          <ul className="topNav">
+            <li>
+              <img src={LightLogo} alt="Logo" />
+              <p>Diamonddreams Event</p>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main className="rule">
+        <section className="adminLogin">
+          <h2>Hello!</h2>
+          <form onSubmit={handleSubmit}>
+            <p>Please input your details</p>
+            <label htmlFor="Email" >Email</label>
+            <input type="text" id="Name" placeholder="Email" value= {email}  onChange={e => setEmail(e.target.value)}/>
+            <label htmlFor="pword">Password</label>
+            <input type="password" id="pword" placeholder="Password" value={password}  onChange={e => setPassword(e.target.value)} />
+            <button disabled={loginIn}>{loginIn ? 'Login you in...' : 'Continue'}</button>
+            <p id="errorMessage"></p>
+          </form>
+        </section>
+      </main>
     </>
   );
 }
