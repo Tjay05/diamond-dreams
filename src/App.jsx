@@ -44,9 +44,9 @@ const router = createBrowserRouter(
         <Route path='Planning' element={<PlanWrap/>} />
         <Route path='Cart' element={<CartWrapper/>} />
       </Route>
-      <Route path='Admin' element={<Login/>} />
-      <Route element={<AdminWrapper/>}>
-        <Route path='Dashboard' element={<Dashboard/>} />
+      <Route path='Login' element={<Login/>} />
+      <Route path='Admin' element={<AdminWrapper/>}>
+        <Route index element={<Dashboard/>} />
         <Route element={<ProductWrapper/>}>
           <Route path='Gowns' element={<GownCollection/>} />
           <Route path='Accessory' element={<AccessoryCollection/>} />
