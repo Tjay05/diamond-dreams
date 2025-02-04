@@ -33,6 +33,7 @@ import ViewBlogs from './pages/admin/ViewBlog';
 import ManagePost from './pages/admin/ManPost';
 import AcademyWrapper from './layout/AcademyWrapper';
 import StudentDashboard from './pages/academy/Dashboard';
+import CourseDetails from './pages/academy/CourseDetail';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -70,6 +71,7 @@ const router = createBrowserRouter(
       </Route>
       <Route path='Student' element={<AcademyWrapper/>}>
         <Route index element={<StudentDashboard/>}/>
+        <Route path='course/:id' element={<CourseDetails/>} />
       </Route>
     </Route>
   )
