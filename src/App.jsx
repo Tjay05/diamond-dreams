@@ -31,6 +31,8 @@ import PlanWrap from './pages/planning/Planning';
 import ShopWrap from './pages/shop/Shop';
 import ViewBlogs from './pages/admin/ViewBlog';
 import ManagePost from './pages/admin/ManPost';
+import AcademyWrapper from './layout/AcademyWrapper';
+import StudentDashboard from './pages/academy/Dashboard';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -65,6 +67,9 @@ const router = createBrowserRouter(
         <Route path='Blog-options' element={<ViewBlogs/>} />
         <Route path='Add-post' element={<CreateBlog/>} />
         <Route path='Manage-post' element={<ManagePost/> } /> 
+      </Route>
+      <Route path='Student' element={<AcademyWrapper/>}>
+        <Route index element={<StudentDashboard/>}/>
       </Route>
     </Route>
   )

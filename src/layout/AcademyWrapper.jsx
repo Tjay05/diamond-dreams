@@ -45,8 +45,7 @@ const AcademyWrapper = () => {
       </nav>
     </header>
     <main className="rule">
-      {/* <Outlet/> */}
-      <p>Academy Page</p>
+      <Outlet/>
     </main>
     <footer className='footer'>
       <div className="footerWrap rule">
@@ -58,12 +57,12 @@ const AcademyWrapper = () => {
           </p>
           <div className="footAdmin">
             <img src={lightAcc} alt="Admin" />
-            <p>Admin/User</p>
+            <p>Student</p>
           </div>
         </div>
         {isMobile&& <hr />}
         {!isMobile && <div className='footLineDiVide'></div>}
-        <div className="quickSocial">
+        {/* <div className="quickSocial">
           <ul className="quickLinks">
             <li>Quick Links</li>
             <li><a href='/#aboutUs'>About us</a></li>
@@ -92,7 +91,7 @@ const AcademyWrapper = () => {
               </Link>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
       <p className='copyRight'>Copyright. All Rights Reserved</p>
     </footer>

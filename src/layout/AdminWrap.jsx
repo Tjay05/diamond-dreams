@@ -65,7 +65,7 @@ const AdminWrapper = () => {
           </p>
           <div className="footAdmin">
             <img src={lightAcc} alt="Admin" />
-            <p>Admin</p>
+            <p>Admin/User</p>
           </div>
         </div>
         {isMobile&& <hr />}
