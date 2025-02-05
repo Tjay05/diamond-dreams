@@ -4,7 +4,7 @@
 :root {
   /* Colors */
   /* Primary Colors */
-  --navbar-bg: hsla(359, 100%, 18%, 1);
+  --navbar-bg: #5c0002;
   --active-link: #5A0001;
 
   /* Neutral Colors */
@@ -1719,7 +1719,7 @@ section.courses {
   margin-block-end: 2rem;
   box-shadow: 0px 2px 20px 0px #00000012;
   border-radius: 10px;
-  padding: 1rem 1rem;
+  padding: 1rem;
 }
 
 section.courses nav.studNav ul {
@@ -1751,6 +1751,7 @@ section.courses .courseSection article {
   display: flex;
   flex-direction: column;
   width: 32%;
+  cursor: pointer;
 }
 
 section.courses .courseSection article img {
@@ -1771,6 +1772,72 @@ section.courses .courseSection article h2 {
 
 section.courses .courseSection article p.source {
   font-size: .6rem;
+}
+
+/* Course Detail */
+nav.btmNav.courseDetail {
+  justify-content: unset;
+  gap: 1rem;
+  margin-block: 0 1rem;
+}
+
+nav.btmNav.courseDetail h1 {
+  font-size: 1.3rem;
+  font-family: var(--rokkitt);
+  color: var(--black);
+}
+
+h2.syllabus {
+  font-size: 1.1rem;
+  font-family: var(--rokkitt);
+  color: #000000d7;
+}
+
+.courseDetails {
+  margin-block: 1rem;
+  box-shadow: 0px 2px 20px 0px #00000012;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.courseDetails li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--rokkitt);
+  color: #000000;
+}
+
+.courseDetails li p {
+  font-size: .7rem;
+  font-family: inherit;
+  color: inherit;
+}
+
+.courseDetails li strong {
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: inherit;
+}
+
+.courseDetails ul {
+  height: 0px;
+  overflow: hidden;
+  font-family: var(--rokkitt);
+  transition: all 0.3s ease-in-out;
+}
+
+.courseDetails ul.expandedModule {
+  margin-left: .5rem;
+  height: unset;
+  display: block;
+}
+
+.courseDetails ul.expandedModule li {
+  margin-block: .5rem;
+  font-family: inherit;
+  display: block;
 }
 
 /* DEsktop Styles */
