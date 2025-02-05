@@ -1763,15 +1763,19 @@ section.courses .courseSection article img {
 
 section.courses .courseSection article h2 {
   text-align: left;
-  font-family: var(--opensans);
+  font-family: var(--rokkitt);
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--black);
   margin: unset;
 }
 
 section.courses .courseSection article p.source {
-  font-size: .6rem;
+  font-size: .5rem;
+  font-weight: 500;
+  margin-block-start: .2rem;
+  line-height: 1.3;
+  font-family: var(--opensans);
 }
 
 /* Course Detail */
@@ -1838,6 +1842,43 @@ h2.syllabus {
   margin-block: .5rem;
   font-family: inherit;
   display: block;
+}
+
+/* Lesson Detail */
+h2.lesson-title {
+  font-family: var(--rokkitt);
+  font-weight: 600;
+  margin-block-end: 1rem;
+  font-size: 1.4rem;
+}
+
+p.lesson-content {
+  font-family: var(--opensans);
+  font-size: .9rem;
+  margin-block-end: 1rem;
+  line-height: 1;
+}
+
+.nav-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-start: 3rem;
+}
+
+.nav-btns button {
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-weight: 500;
+  font-size: .8rem;
+  font-family: var(--rokkitt);
+  color: var(--white);
+  background-color: var(--active-link);
+}
+
+.nav-btns button:disabled {
+  opacity: .5;
 }
 
 /* DEsktop Styles */
