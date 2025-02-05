@@ -1804,11 +1804,15 @@ h2.syllabus {
   border-radius: 5px;
 }
 
+.courseDetails li > * {
+  flex: 1 1 auto;
+}
+
 .courseDetails li {
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   font-family: var(--rokkitt);
   color: #000000;
 }
@@ -1817,12 +1821,14 @@ h2.syllabus {
   font-size: .7rem;
   font-family: inherit;
   color: inherit;
+  flex-basis: 80px;
 }
 
 .courseDetails li strong {
   font-size: 0.9rem;
   font-family: inherit;
   color: inherit;
+  flex-basis: 195px;
 }
 
 .courseDetails ul {
@@ -1879,6 +1885,7 @@ p.lesson-content {
 
 .nav-btns button:disabled {
   opacity: .5;
+  cursor: not-allowed;
 }
 
 /* DEsktop Styles */

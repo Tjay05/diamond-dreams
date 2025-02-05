@@ -52,7 +52,7 @@ const CourseDetails = () => {
           {module.lessons.map((lesson) => (
             <li key={lesson.id}>
               <Link to={`module/${module.id}/lesson/${lesson.id}`}>
-                <strong>{ lesson.title }</strong> - { lesson.content }
+                <strong>{ lesson.title }</strong> - { lesson.brief }
               </Link>
             </li>
           ))}
