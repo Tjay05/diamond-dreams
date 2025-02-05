@@ -1,31 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import CoverImg from "../../assets/images/blue-bg.jpg";
-const courseData = [
-  {
-    id: 1,
-    title: 'Art in Fashion',
-    source: 'Tjay',
-    image: CoverImg,
-  },
-  {
-    id: 2,
-    title: 'Detailed Beauty',
-    source: 'Topins',
-    image: CoverImg,
-  },
-  {
-    id: 3,
-    title: 'Elegance in Style',
-    source: 'Dublin Art',
-    image: CoverImg,
-  }
-]
+import courses from "../../data/Course";
 
 const StudentDashboard = () => {
   const navigate = useNavigate();
-  const handleClick = (item) => {
-    navigate(`course/${item.id}`, 
-      { state: { item } }
+  const handleClick = (course) => {
+    navigate(`course/${course.id}`, 
+      { state: { course } }
     );
   };
 
@@ -43,16 +23,16 @@ const StudentDashboard = () => {
           </ul>
         </nav>
         <div className="courseSection">
-          {courseData.map((item) => (
-            <article key={item.id} onClick={() => handleClick(item)}>
-              <img src={item.image} alt="" />
-              <h2>{item.title}</h2>
-              <p className="source">{item.source}</p>
+          {Object.values(courses).map((course) => (
+            <article key={course.id} onClick={() => handleClick(course)}>
+              <img src={course.image} alt="" />
+              <h2>{course.title}</h2>
+              <p className="source">{course.source}</p>
             </article>
           ))}
         </div>
       </section>
-      <section className="courses">
+      {/* <section className="courses">
         <nav className="studNav">
           <ul>
             <li>
@@ -73,7 +53,7 @@ const StudentDashboard = () => {
             <h2>Honour in Decoration</h2>
           </article>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
