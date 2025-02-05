@@ -36,7 +36,7 @@ const Login = () => {
         setPassword('');
         setLoginIn(false);
         localStorage.setItem('token', JSON.stringify(data));
-        history('Admin')
+        history('/Admin')
       } else {
         setEmail('');
         setPassword('');
