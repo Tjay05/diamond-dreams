@@ -34,6 +34,7 @@ import ManagePost from './pages/admin/ManPost';
 import AcademyWrapper from './layout/AcademyWrapper';
 import StudentDashboard from './pages/academy/Dashboard';
 import CourseDetails from './pages/academy/CourseDetail';
+import LessonDetail from './pages/academy/LessonDetail';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -72,6 +73,7 @@ const router = createBrowserRouter(
       <Route path='Student' element={<AcademyWrapper/>}>
         <Route index element={<StudentDashboard/>}/>
         <Route path='course/:id' element={<CourseDetails/>} />
+        <Route path='course/:courseId/module/:moduleId/lesson/:lessonId' element={<LessonDetail/>} />
       </Route>
     </Route>
   )
