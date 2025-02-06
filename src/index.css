@@ -1818,7 +1818,7 @@ h2.syllabus {
 }
 
 .courseDetails li p {
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-family: inherit;
   color: inherit;
   flex-basis: 80px;
