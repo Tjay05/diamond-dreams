@@ -48,7 +48,7 @@ const Login = () => {
     } catch (error) {
       setLoginIn(false);
       console.error('Error submitting form data:', error);
-      error.innerHTML = 'Connect to a network and try again'; // Assuming `error` is a state variable
+      error.innerHTML = 'Connect to a network and try again';
     }
   };
   
