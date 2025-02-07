@@ -1,61 +1,135 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { BsStarFill, BsStar } from "react-icons/bs";
+import { FaSearch, FaFire } from "react-icons/fa";
 import courses from "../../data/Course";
+import image from "../../assets/images/academy.jpeg";
+
+// Dummy data for ongoing courses
+const ongoingCourses = [
+  {
+    id: 101,
+    title: "React for Beginners",
+    progress: 70,
+    image: "../../assets/images/academy.jpeg"
+  },
+  {
+    id: 102,
+    title: "Advanced Node.js",
+    progress: 50,
+    image: "../../assets/images/academy.jpeg"
+  },
+  {
+    id: 103,
+    title: "UI/UX Mastery",
+    progress: 85,
+    image: "../../assets/images/academy.jpeg"
+  }
+];
 
 const StudentDashboard = () => {
   const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState("");
+  const [seeAll, setSeeAll] = useState(false);
+  const [streak, setStreak] = useState(5); // Example: 5-day streak
+
   const handleClick = (course) => {
-    navigate(`course/${course.id}`, 
-      { state: { course } }
+    navigate(`course/${course.id}`, { state: { course } });
+  };
+
+  const renderStars = (rating) => {
+    return [...Array(5)].map((_, i) =>
+      i < rating ? (
+        <BsStarFill key={i} className="star filled" />
+      ) : (
+        <BsStar key={i} className="star" />
+      )
     );
   };
 
+  const filteredCourses = Object.values(courses).filter((course) =>
+    course.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
-    <>
-      <section className="courses">
-        <nav className="studNav">
-          <ul>
-            <li>
-              <h1>New Courses</h1>
-            </li>
-            <li>
-              <p>See all</p>
-            </li>
-          </ul>
-        </nav>
+    <section className="dashboard">
+      {/* Header */}
+      <header className="dashboard-header">
+        <h1>Welcome, Tosin Poppins</h1>
+        <p>Continue your learning journey</p>
+      </header>
+
+      {/* Learning Streak */}
+      <div className="streak">
+        <FaFire className="fire-icon" />
+        <span>You have a {streak}-day learning streak!</span>
+      </div>
+
+      {/* Search Bar */}
+      <div className="search-bar">
+        <FaSearch className="search-icon" />
+        <input
+          type="text"
+          placeholder="Search for courses..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </div>
+
+      {/* Continue Learning Section */}
+      <section className="continue-courses">
+        <h2>Continue Learning</h2>
         <div className="courseSection">
-          {Object.values(courses).map((course) => (
+          {ongoingCourses.map((course) => (
             <article key={course.id} onClick={() => handleClick(course)}>
-              <img src={course.image} alt="" />
+              <img src={image} className="ongoing-image" alt={course.title} />
               <h2>{course.title}</h2>
-              <p className="source">{course.source}</p>
+              <p>Progress: {course.progress}%</p>
+              <div className="progress-bar">
+                <div
+                  className="progress"
+                  style={{ width: `${course.progress}%` }}
+                ></div>
+              </div>
             </article>
           ))}
         </div>
       </section>
-      {/* <section className="courses">
+
+      {/* New Courses Section */}
+      <section className="courses">
         <nav className="studNav">
           <ul>
             <li>
-              <h1>Earn a Certificate</h1>
+              <h2>New Courses</h2>
             </li>
-            <li>
-              <p>See all</p>
-            </li>
+            {filteredCourses.length > 3 && (
+              <li>
+                <p className="see-all" onClick={() => setSeeAll(!seeAll)}>
+                  {seeAll ? "Show Less" : "See All"}
+                </p>
+              </li>
+            )}
           </ul>
         </nav>
+
         <div className="courseSection">
-          <article>
-            <img src={CoverImg} alt="" />
-            <h2>Certificate in Art</h2>
-          </article>
-          <article>
-            <img src={CoverImg} alt="" />
-            <h2>Honour in Decoration</h2>
-          </article>
+          {(seeAll ? filteredCourses : filteredCourses.slice(0, 3)).map(
+            (course) => (
+              <article key={course.id} onClick={() => handleClick(course)}>
+                <img src={course.image} alt={course.title} />
+                <h2>{course.title}</h2>
+                <p className="source">{course.source}</p>
+                <div className="stars">{renderStars(course.rating)}</div>
+              </article>
+            )
+          )}
         </div>
-      </section> */}
-    </>
+      </section>
+    </section>
   );
-}
- 
+};
+
+
+
 export default StudentDashboard;
