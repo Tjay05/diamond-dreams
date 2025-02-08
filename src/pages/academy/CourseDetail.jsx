@@ -53,6 +53,12 @@ const CourseDetails = () => {
         </header>
       )}
       <section className="studSection">
+        {isMobile && (
+          <nav className="btmNav courseDetail">
+            <img src={back} alt="Back" onClick={() => history(`/student`)} />
+            <h1>{ course.title }</h1>
+          </nav>
+        )}
         <h2 className="syllabus">Syllabus: What you will learn in this course</h2>
         {course.modules.map((module) => (
         <div className="courseDetails" key={module.id}>

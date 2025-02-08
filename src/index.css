@@ -1779,14 +1779,14 @@ section.courses .courseSection article img {
 section.courses .courseSection article h2 {
   text-align: left;
   font-family: var(--rokkitt);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--black);
   margin: unset;
 }
 
 section.courses .courseSection article p.source {
-  font-size: .5rem;
+  font-size: .6rem;
   font-weight: 500;
   margin-block-start: .2rem;
   line-height: 1.3;
@@ -2464,6 +2464,31 @@ p.lesson-content {
     width: 92%;
     margin-inline: auto;
   }
+
+  section.courses .courseSection article h2 {
+    font-size: 1.2rem;
+  }
+  
+  section.courses .courseSection article p.source {
+    font-size: .8rem;
+    font-weight: 500;
+  }
+
+  h2.syllabus {
+    font-size: 1.5rem;
+  }
+
+  .courseDetails li p {
+    font-size: 1rem;
+  }
+  
+  .courseDetails li strong {
+    font-size: 1.2rem;
+  }
+
+  .courseDetails ul.expandedModule li {
+    font-size: 1rem;
+  }
 }
 
 .dashboard-header {
@@ -2632,7 +2657,7 @@ article img {
   border-bottom: 2px solid #ddd;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
 }
 
 .lesson-title {
