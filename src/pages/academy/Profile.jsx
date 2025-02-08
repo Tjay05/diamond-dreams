@@ -20,44 +20,46 @@ function Profile() {
   };
 
   return (
-    <div className="profile-container">
-      <div className="profile-card">
-        <label className="profile-upload-label">
-          <FaCamera className="profile-upload-icon" />
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageUpload}
-            className="profile-upload"
-          />
-        </label>
-        <img src={avatar} alt="Student Avatar" className="profile-avatar" />
-        <div className="profile-field">
-          <FaUser className="profile-icon" />
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="profile-input"
-          />
-        </div>
-        <div className="profile-field">
-          <FaEnvelope className="profile-icon" />
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="profile-input"
-          />
-        </div>
-        <div className="profile-field">
-          <FaBook className="profile-icon" />
-          <input
-            type="text"
-            value={course}
-            onChange={(e) => setCourse(e.target.value)}
-            className="profile-input"
-          />
+    <div className="profile-page" >
+      <div className="profile-container">
+        <div className="profile-card">
+          <label className="profile-upload-label">
+            <FaCamera className="profile-upload-icon" />
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleImageUpload}
+              className="profile-upload"
+            />
+          </label>
+          <img src={avatar} alt="Student Avatar" className="profile-avatar" />
+          <div className="profile-field">
+            <FaUser className="profile-icon" />
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="profile-input"
+            />
+          </div>
+          <div className="profile-field">
+            <FaEnvelope className="profile-icon" />
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="profile-input"
+            />
+          </div>
+          <div className="profile-field">
+            <FaBook className="profile-icon" />
+            <input
+              type="text"
+              value={course}
+              onChange={(e) => setCourse(e.target.value)}
+              className="profile-input"
+            />
+          </div>
         </div>
       </div>
     </div>

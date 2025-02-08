@@ -104,7 +104,7 @@ const AcademyWrapper = () => {
                   <NavLink>All Courses</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/profile">Profile</NavLink>
+                  <NavLink to="/Student/profile">Profile</NavLink>
                 </li>
               </ul>
             </nav>

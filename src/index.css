@@ -2752,11 +2752,19 @@ article img {
 
 /* Profile.css */
 .profile-container {
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #5c0002;
+  height: 80vh;
+  /* background-color: #5c0002; */
+  /* border: solid 1px #5c0002 ; */
+  margin: auto;
+}
+
+.profile-page {
+  background: white;
+  width: 100%;
 }
 
 .profile-card {
