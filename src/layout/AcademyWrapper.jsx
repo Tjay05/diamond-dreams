@@ -1,4 +1,6 @@
 import LightLogo from '../assets/icons/light-logo.svg';
+import closeIcon from '../assets/icons/close.svg';
+import navIcon from '../assets/icons/nav-icon.svg'
 import darkLogo from '../assets/icons/dark-logo.svg';
 import lightAcc from '../assets/icons/light_account.svg';
 import facebook from '../assets/icons/facebook.svg';
@@ -13,6 +15,7 @@ const AcademyWrapper = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [showPorofile, setProfile] = useState(false);
   const location = useLocation();
+  const [toggleNav, setToggleNav] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -28,26 +31,80 @@ const AcademyWrapper = () => {
     };
   }, []);
 
+  const handleNavToggle = () => {
+    setToggleNav(!toggleNav);
+  };
+
   return (
     <>
     {showPorofile && <ProfilePage setProfile={setProfile}/>}
-    <header className="adminHeader">
-      <nav className="rule">
-        <ul className='topNav'>
-          <li>
-            <img src={LightLogo} alt="Logo" />
-            <p>Diamonddreams Event</p>
-          </li>
-          <li>
-            <p>Student</p>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main className="rule">
-      <Outlet/>
+    {isMobile && (
+      <header className='homeHeader acadedmy-home-header'>
+        <div className="headerContainer">
+          <nav className={`dropNav ${toggleNav ? 'active' : ''}`}>
+            <div className="rule">
+              <img 
+                onClick={handleNavToggle}
+                className= "closIcon" 
+                src={closeIcon} 
+                alt="Close" 
+              />
+              <ul>
+                <li><NavLink onClick={() => Window.reload()} to='/Student'>Dashboard</NavLink></li>
+                <li><NavLink onClick={handleNavToggle} to=''>All courses</NavLink></li>
+                <li><NavLink onClick={handleNavToggle} to=''>My Courses</NavLink></li>
+                <li><NavLink onClick={handleNavToggle} to=''>Profile</NavLink></li>
+              </ul>
+            </div>
+          </nav>
+          <nav className="navbar rule">
+            <ul className='topNav'>
+              <li>
+                <img src={LightLogo} alt="Logo" />
+                <p>Diamonddreams Event</p>
+              </li>
+              <li>
+                <img 
+                  src={navIcon} 
+                  alt="Hamburger" 
+                  onClick={handleNavToggle}
+                />
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    )}
+    <main className="rule academy-container">
+      {!isMobile && <aside className='nav'>
+        <nav className="container">
+          <ul>
+            <li>
+              <a>
+                <img src={LightLogo} alt="Logo" />
+                <p>Diamond Dreams</p>
+              </a>
+            </li>
+            <li>
+              <NavLink to='/Student'>Dashboard</NavLink>
+            </li>
+            <li>
+              <NavLink>All Courses</NavLink>
+            </li>
+            <li>
+              <NavLink>My Courses</NavLink>
+            </li>
+            <li>
+              <NavLink>Profile</NavLink>
+            </li>
+          </ul>
+        </nav>
+      </aside>}
+      <section className='student-outlet'>
+        <Outlet/>
+      </section>
     </main>
-    <footer className='footer'>
+    {/* <footer className='footer'>
       <div className="footerWrap rule">
         <div className="footerLogo">
           <img src={darkLogo} alt="Logo" />
@@ -62,39 +119,9 @@ const AcademyWrapper = () => {
         </div>
         {isMobile&& <hr />}
         {!isMobile && <div className='footLineDiVide'></div>}
-        {/* <div className="quickSocial">
-          <ul className="quickLinks">
-            <li>Quick Links</li>
-            <li><a href='/#aboutUs'>About us</a></li>
-            <li><a href='/#testimonials'>Testimonials</a></li>
-            <li><a href='/#faqs'>FAQs</a></li>
-            <li><Link to='/Shop'>Shop</Link></li>
-          </ul>
-          <ul className="socialLiks">
-            <li>Follow us</li>
-            <li className='socialIcons'>
-              <Link to='https://web.facebook.com/diamondreamsevents' target="_blank" className='socialLinkLink'>
-                <img src={facebook} alt="Facebook" />
-                <p>Facebook</p>
-              </Link>
-            </li>
-            <li className='socialIcons'>
-              <Link to='' target="_blank" className='socialLinkLink'>
-                <img src={instagram} alt="Instagram" />
-                <p>Instagram</p>
-              </Link>
-            </li>
-            <li className='socialIcons'>
-              <Link to='' target="_blank" className='socialLinkLink'>
-                <img src={twitx} alt="Twitter" />
-                <p>Twitter</p>
-              </Link>
-            </li>
-          </ul>
-        </div> */}
       </div>
       <p className='copyRight'>Copyright. All Rights Reserved</p>
-    </footer>
+    </footer> */}
     </>
   );
 }

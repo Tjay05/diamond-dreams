@@ -1713,6 +1713,21 @@ section.blogSection .blogContainer article.availBlogs {
 }
 
 /* Academy-Student Page Styles */
+/* Navbar */
+header.acadedmy-home-header {
+  background-color: var(--navbar-bg);
+  height: unset;
+}
+
+header.acadedmy-home-header::before {
+  position: unset;
+  opacity: unset;
+}
+
+header.acadedmy-home-header nav.dropNav.active {
+  height: unset;
+}
+
 /* Student Dashboard */
 section.courses {
   width: 100%;
@@ -2356,6 +2371,57 @@ p.lesson-content {
     font-size: 1.5rem;
     color: var(--navbar-bg);
   }
+
+  /* Student Page */
+  main.academy-container {
+    display: flex;
+    width: 100vw;
+    padding: unset;
+    margin: unset;
+  }
+
+  main.academy-container aside.nav {
+    position: sticky;
+    top: 0;
+    width: 23%;
+    background-color: var(--navbar-bg);
+    height: 100vh;
+  }
+
+  /* Side nAv */
+  aside.nav nav.container {
+    width: 70%;
+    margin-inline: auto;
+  }
+  
+  aside.nav nav.container > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    color: var(--white);
+    font-family: var(--opensans);
+    font-weight: 400;
+    font-size: clamp(1rem, 1.3vw, 2.4rem);
+  }
+  
+  aside.nav nav.container > ul li:first-child {
+    font-family: inherit;
+    margin-block: 3.5rem 2.5rem;
+  }
+  
+  aside.nav nav.container > ul li a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  aside.nav nav.container > ul li a img {
+    width: 30px;
+  }
+
+  main.academy-container section.student-outlet {
+    width: 77%;
+  }
 }
 
 .dashboard-header {
@@ -2364,6 +2430,7 @@ p.lesson-content {
   background-color: #5c0002;
   color: white;
   border-radius: 8px;
+  font-family: var(--rokkitt);
   margin-bottom: 20px;
 }
 
@@ -2375,6 +2442,7 @@ p.lesson-content {
   background: #ffcc00;
   padding: 10px;
   border-radius: 8px;
+  font-family: var(--rokkitt);
   color: black;
   font-weight: bold;
   margin-bottom: 20px;
