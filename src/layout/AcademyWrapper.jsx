@@ -37,36 +37,47 @@ const AcademyWrapper = () => {
 
   return (
     <>
-      {showPorofile && <ProfilePage setProfile={setProfile}/>}
+      {showPorofile && <ProfilePage setProfile={setProfile} />}
       {isMobile && (
-        <header className='homeHeader acadedmy-home-header'>
+        <header className="homeHeader acadedmy-home-header">
           <div className="headerContainer">
-            <nav className={`dropNav ${toggleNav ? 'active' : ''}`}>
+            <nav className={`dropNav ${toggleNav ? "active" : ""}`}>
               <div className="rule">
-                <img 
+                <img
                   onClick={handleNavToggle}
-                  className= "closIcon" 
-                  src={closeIcon} 
-                  alt="Close" 
+                  className="closIcon"
+                  src={closeIcon}
+                  alt="Close"
                 />
                 <ul>
-                  <li><NavLink onClick={() => Window.reload()} to='/Student'>Dashboard</NavLink></li>
-                  <li><NavLink onClick={handleNavToggle} to=''>All courses</NavLink></li>
-                  <li><NavLink onClick={handleNavToggle} to=''>My Courses</NavLink></li>
-                  <li><NavLink onClick={handleNavToggle} to=''>Profile</NavLink></li>
+                  <li>
+                    <NavLink onClick={() => Window.reload()} to="/Student">
+                      Dashboard
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink onClick={handleNavToggle} to="">
+                      Courses
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink onClick={handleNavToggle} to="/Student/profile">
+                      Profile
+                    </NavLink>
+                  </li>
                 </ul>
               </div>
             </nav>
             <nav className="navbar rule">
-              <ul className='topNav'>
+              <ul className="topNav">
                 <li>
                   <img src={LightLogo} alt="Logo" />
                   <p>Diamonddreams Event</p>
                 </li>
                 <li>
-                  <img 
-                    src={navIcon} 
-                    alt="Hamburger" 
+                  <img
+                    src={navIcon}
+                    alt="Hamburger"
                     onClick={handleNavToggle}
                   />
                 </li>
@@ -77,7 +88,7 @@ const AcademyWrapper = () => {
       )}
       <main className="rule academy-container">
         {!isMobile && (
-          <aside className='nav'>
+          <aside className="nav">
             <nav className="container">
               <ul>
                 <li>
@@ -87,23 +98,20 @@ const AcademyWrapper = () => {
                   </a>
                 </li>
                 <li>
-                  <NavLink to='/Student'>Dashboard</NavLink>
+                  <NavLink to="/Student">Dashboard</NavLink>
                 </li>
                 <li>
                   <NavLink>All Courses</NavLink>
                 </li>
                 <li>
-                  <NavLink>My Courses</NavLink>
-                </li>
-                <li>
-                  <NavLink>Profile</NavLink>
+                  <NavLink to="/Student/profile">Profile</NavLink>
                 </li>
               </ul>
             </nav>
           </aside>
         )}
-        <section className='student-outlet'>
-          <Outlet/>
+        <section className="student-outlet">
+          <Outlet />
         </section>
       </main>
       {/* <footer className='footer'>

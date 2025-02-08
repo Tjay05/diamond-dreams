@@ -35,49 +35,54 @@ import AcademyWrapper from './layout/AcademyWrapper';
 import StudentDashboard from './pages/academy/Dashboard';
 import CourseDetails from './pages/academy/CourseDetail';
 import LessonDetail from './pages/academy/LessonDetail';
+import Profile from './pages/academy/Profile';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route element={<Navbar/>}>
-        <Route index element={<Home/>}/>
-        <Route path='Shop' element={<ShopWrap/>}/>
-        <Route path='Blog' element={<BlogWrap/>} />
-        <Route path='Contact' element={<ContactWrap/>} />
-        <Route path='Academy' element={<AcademyWrap/>} />
-        <Route path='Planning' element={<PlanWrap/>} />
-        <Route path='Cart' element={<CartWrapper/>} />
+      <Route element={<Navbar />}>
+        <Route index element={<Home />} />
+        <Route path="Shop" element={<ShopWrap />} />
+        <Route path="Blog" element={<BlogWrap />} />
+        <Route path="Contact" element={<ContactWrap />} />
+        <Route path="Academy" element={<AcademyWrap />} />
+        <Route path="Planning" element={<PlanWrap />} />
+        <Route path="Cart" element={<CartWrapper />} />
       </Route>
-      <Route path='Login' element={<Login/>} />
-      <Route path='Admin' element={<AdminWrapper/>}>
-        <Route index element={<Dashboard/>} />
-        <Route element={<ProductWrapper/>}>
-          <Route path='Gowns' element={<GownCollection/>} />
-          <Route path='Accessory' element={<AccessoryCollection/>} />
-          <Route path='Bouquet' element={<BouquetCollection/>} />
-          <Route path='Magazine' element={<MagazineCollection/>} />
+      <Route path="Login" element={<Login />} />
+      <Route path="Admin" element={<AdminWrapper />}>
+        <Route index element={<Dashboard />} />
+        <Route element={<ProductWrapper />}>
+          <Route path="Gowns" element={<GownCollection />} />
+          <Route path="Accessory" element={<AccessoryCollection />} />
+          <Route path="Bouquet" element={<BouquetCollection />} />
+          <Route path="Magazine" element={<MagazineCollection />} />
         </Route>
-        <Route element={<EnrollWrapper/> }>
-          <Route path='Pending' element={<PendingEnrolls/>} />
-          <Route path='Accepted' element={<AcceptedEnroll/>} />
+        <Route element={<EnrollWrapper />}>
+          <Route path="Pending" element={<PendingEnrolls />} />
+          <Route path="Accepted" element={<AcceptedEnroll />} />
         </Route>
-        <Route element={<OrdersWrapper/>}>
-          <Route path='Pending-orders' element={<PendingOrders/>} />
-          <Route path='Delivered' element={<DeliveredOrders/>} />
+        <Route element={<OrdersWrapper />}>
+          <Route path="Pending-orders" element={<PendingOrders />} />
+          <Route path="Delivered" element={<DeliveredOrders />} />
         </Route>
-        <Route path='New-Product' element={<NewProduct/>} /> 
-        <Route path='Blog-options' element={<ViewBlogs/>} />
-        <Route path='Add-post' element={<CreateBlog/>} />
-        <Route path='Manage-post' element={<ManagePost/> } /> 
+        <Route path="New-Product" element={<NewProduct />} />
+        <Route path="Blog-options" element={<ViewBlogs />} />
+        <Route path="Add-post" element={<CreateBlog />} />
+        <Route path="Manage-post" element={<ManagePost />} />
       </Route>
-      <Route path='Student' element={<AcademyWrapper/>}>
-        <Route index element={<StudentDashboard/>}/>
-        <Route path='course/:id' element={<CourseDetails/>} />
-        <Route path='course/:courseId/module/:moduleId/lesson/:lessonId' element={<LessonDetail/>} />
+      <Route path="Student" element={<AcademyWrapper />}>
+        <Route index element={<StudentDashboard />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="course/:id" element={<CourseDetails />} />
+        <Route
+          path="course/:courseId/module/:moduleId/lesson/:lessonId"
+          element={<LessonDetail />}
+        />
       </Route>
     </Route>
   )
-)
+);
 
 function App() {
 

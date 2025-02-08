@@ -1,30 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { BsStarFill, BsStar } from "react-icons/bs";
-import { FaSearch, FaFire } from "react-icons/fa";
+import { FaSearch, FaFire, FaBookOpen, FaChartBar } from "react-icons/fa";
 import courses from "../../data/Course";
 import image from "../../assets/images/academy.jpeg";
 
-// Dummy data for ongoing courses
 const ongoingCourses = [
-  {
-    id: 101,
-    title: "React for Beginners",
-    progress: 70,
-    image: "../../assets/images/academy.jpeg"
-  },
-  {
-    id: 102,
-    title: "Advanced Node.js",
-    progress: 50,
-    image: "../../assets/images/academy.jpeg"
-  },
-  {
-    id: 103,
-    title: "UI/UX Mastery",
-    progress: 85,
-    image: "../../assets/images/academy.jpeg"
-  }
+  { id: 101, title: "React for Beginners", progress: 70, image },
+  { id: 102, title: "Advanced Node.js", progress: 50, image },
+  { id: 103, title: "UI/UX Mastery", progress: 85, image }
 ];
 
 const StudentDashboard = () => {
@@ -32,7 +16,9 @@ const StudentDashboard = () => {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [seeAll, setSeeAll] = useState(false);
-  const [streak, setStreak] = useState(5); // Example: 5-day streak
+  const [streak, setStreak] = useState(5);
+  const [enrolledCourses, setEnrolledCourses] = useState(10);
+  const [overallProgress, setOverallProgress] = useState(65);
 
   useEffect(() => {
     const handleResize = () => {
@@ -40,11 +26,9 @@ const StudentDashboard = () => {
     };
 
     handleResize();
-
-    window.addEventListener('resize', handleResize);
-
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -52,15 +36,14 @@ const StudentDashboard = () => {
     navigate(`course/${course.id}`, { state: { course } });
   };
 
-  const renderStars = (rating) => {
-    return [...Array(5)].map((_, i) =>
+  const renderStars = (rating) =>
+    [...Array(5)].map((_, i) =>
       i < rating ? (
         <BsStarFill key={i} className="star filled" />
       ) : (
         <BsStar key={i} className="star" />
       )
     );
-  };
 
   const filteredCourses = Object.values(courses).filter((course) =>
     course.title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -87,7 +70,6 @@ const StudentDashboard = () => {
         </header>
       )}
       <section className="dashboard studSection">
-        {/* Header */}
         <header className="dashboard-header">
           <h1>Welcome, Tosin Poppins</h1>
           <p>Continue your learning journey</p>
@@ -99,26 +81,35 @@ const StudentDashboard = () => {
           <span>You have a {streak}-day learning streak!</span>
         </div>
 
-        {/* Search Bar */}
-        {isMobile&& (
-        <div className="search-bar">
-          <FaSearch className="search-icon" />
-          <input
-            type="text"
-            placeholder="Search for courses..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
+        {/* Enrollment and Progress Overview */}
+        <div className="enrollment-progress">
+          <div className="enrollment-box">
+            <FaBookOpen className="enrollment-icon" />
+            <div>
+              <h3>{enrolledCourses}</h3>
+              <p>Enrolled Courses</p>
+            </div>
+          </div>
+          <div className="progress-box">
+            <FaChartBar className="progress-icon" />
+            <div>
+              <h3>{overallProgress}%</h3>
+              <p>Overall Progress</p>
+            </div>
+          </div>
         </div>
-        )}
 
-        {/* Continue Learning Section */}
+        {/* Continue Learning */}
         <section className="continue-courses">
           <h2>Continue Learning</h2>
           <div className="courseSection">
             {ongoingCourses.map((course) => (
               <article key={course.id} onClick={() => handleClick(course)}>
-                <img src={image} className="ongoing-image" alt={course.title} />
+                <img
+                  src={course.image}
+                  className="ongoing-image"
+                  alt={course.title}
+                />
                 <h2>{course.title}</h2>
                 <p>Progress: {course.progress}%</p>
                 <div className="progress-bar">
@@ -132,7 +123,7 @@ const StudentDashboard = () => {
           </div>
         </section>
 
-        {/* New Courses Section */}
+        {/* New Courses */}
         <section className="courses">
           <nav className="studNav">
             <ul>
@@ -166,7 +157,5 @@ const StudentDashboard = () => {
     </>
   );
 };
-
-
 
 export default StudentDashboard;
