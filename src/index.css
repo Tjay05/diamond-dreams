@@ -5,10 +5,18 @@
   /* Colors */
   /* Primary Colors */
   --navbar-bg: #5c0002;
-  --active-link: #5A0001;
+  --active-link: #5a0001;
 
   /* Neutral Colors */
-  --header-bg: linear-gradient(117.61deg, #000000 -14.09%, #000000 -4.26%, rgba(0, 0, 0, 0.772977) 49.35%, rgba(0, 0, 0, 0.537787) 62.43%, rgba(0, 0, 0, 0.352599) 72.89%, rgba(0, 0, 0, 0) 81.11%) ;
+  --header-bg: linear-gradient(
+    117.61deg,
+    #000000 -14.09%,
+    #000000 -4.26%,
+    rgba(0, 0, 0, 0.772977) 49.35%,
+    rgba(0, 0, 0, 0.537787) 62.43%,
+    rgba(0, 0, 0, 0.352599) 72.89%,
+    rgba(0, 0, 0, 0) 81.11%
+  );
   --white: hsla(0, 0%, 100%, 1);
   --black: hsla(0, 0%, 0%, 1);
   --faq-bg: hsla(0, 0%, 95%, 0.3);
@@ -25,7 +33,16 @@
   box-sizing: border-box;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, ul, li {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
   margin: 0;
   padding: 0;
 }
@@ -40,7 +57,7 @@ a {
   color: inherit;
 }
 
-ul{
+ul {
   list-style: none;
 }
 
@@ -52,7 +69,9 @@ abbr[title] {
   text-decoration: none;
 }
 
-input:focus, textarea:focus, select:focus {
+input:focus,
+textarea:focus,
+select:focus {
   border: none;
   outline: none;
 }
@@ -222,7 +241,7 @@ nav.dropNav {
   position: absolute;
   z-index: 30;
   width: 100%;
-  height: 0px; 
+  height: 0px;
   overflow: hidden; /* Hide overflow content */
   transition: all 0.3s ease-in-out;
   color: var(--white);
@@ -257,9 +276,9 @@ nav.dropNav li img {
 
 /* Navabr Styles */
 nav.navbar {
-  color: var(--white); 
+  color: var(--white);
   position: relative;
-  z-index: 2; 
+  z-index: 2;
   padding-block: 1.5rem;
 }
 
@@ -277,7 +296,8 @@ nav.navbar ul.topNav {
   align-items: center;
 }
 
-nav.navbar ul.secondNav, nav.navbar ul.cartNav {
+nav.navbar ul.secondNav,
+nav.navbar ul.cartNav {
   display: none;
 }
 
@@ -361,7 +381,7 @@ main section.academySection {
   text-align: center;
 }
 
-main section.academySection img.epectPic{
+main section.academySection img.epectPic {
   text-align: center;
   width: 40%;
 }
@@ -394,7 +414,7 @@ section.faq article h3 {
   color: var(--black);
 }
 
-section.faq article ul{
+section.faq article ul {
   font-weight: 400;
   font-size: 0.8rem;
   font-family: var(--rokkitt);
@@ -434,7 +454,7 @@ section.blogSection .blogContainer article p {
   text-decoration: underline;
   font-family: var(--rokkitt);
   font-size: .85rem;
-  padding-block: 1rem ;
+  padding-block: 1rem;
   height: 35%;
 }
 
@@ -605,7 +625,8 @@ footer.footer .footerWrap {
   flex: 1;
 }
 
-.footerWrap .quickSocial .socialLiks li.socialIcons, a.socialLinkLink {
+.footerWrap .quickSocial .socialLiks li.socialIcons,
+a.socialLinkLink {
   display: flex;
   gap: 1rem;
 }
@@ -896,7 +917,8 @@ section .oneOfUs {
   margin-block: 1rem;
 }
 
-.acadFormSwiPer .swiper-button-prev::after, .acadFormSwiPer .swiper-button-next::after {
+.acadFormSwiPer .swiper-button-prev::after,
+.acadFormSwiPer .swiper-button-next::after {
   display: none;
 }
 
@@ -914,7 +936,8 @@ section .oneOfUs {
   background: var(--navbar-bg);
 }
 
-.acadFormSwiPer .swiper-button-prev, .acadFormSwiPer .swiper-button-next {
+.acadFormSwiPer .swiper-button-prev,
+.acadFormSwiPer .swiper-button-next {
   position: unset;
   top: unset;
   width: unset;
@@ -1005,7 +1028,7 @@ section.emptyCartSect .cartImgDiv img {
   width: 100%;
 }
 
-section.emptyCartSect button{
+section.emptyCartSect button {
   font-weight: 600;
   font-family: var(--opensans);
   padding: 0.5rem;
@@ -1160,7 +1183,7 @@ form .popUpRadGroup .flexRad {
   gap: 0.5rem;
 }
 
-.popup .cartPopUpWrap .cartPopDetails form button{
+.popup .cartPopUpWrap .cartPopDetails form button {
   font-weight: 500;
   font-family: var(--opensans);
   padding: 0.5rem;
@@ -1276,7 +1299,7 @@ section.dashBoardSection .grid-icons article {
 .grid-icons article button {
   align-self: flex-start;
   display: flex;
-  align-items: center; 
+  align-items: center;
   font-weight: 600;
   font-family: var(--opensans);
   padding: .4rem .8rem;
@@ -1339,7 +1362,7 @@ section.pendenroll {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #FBFBFB;
+  background-color: #fbfbfb;
   padding: 1rem;
   margin-block: 1rem;
 }
@@ -1432,7 +1455,8 @@ section.pendenroll .delWrap img {
   display: none;
 }
 
-.profileWrap .profCont, .profCont form {
+.profileWrap .profCont,
+.profCont form {
   display: flex;
   flex-direction: column;
   font-family: var(--rokkitt);
@@ -1508,7 +1532,8 @@ button.logOutBtn {
   flex-direction: column;
 }
 
-.NewProd form input, select {
+.NewProd form input,
+select {
   margin-block-end: 1rem;
   border: none;
   padding: .5rem;
@@ -1692,11 +1717,11 @@ section.blogSection .blogContainer article.availBlogs .kevHart p {
 section.blogSection .blogContainer article.availBlogs {
   height: 50vh;
 }
-  
-#errorMessage{
-  color: #5A0001;
+
+#errorMessage {
+  color: #5a0001;
 }
-  
+
 .cart-count {
   font-size: 15px;
   color: white;
@@ -1705,7 +1730,7 @@ section.blogSection .blogContainer article.availBlogs {
   margin-top: -10px;
   margin-left: 30px;
 }
-  
+
 /* Our Collection  */
 #delete {
   margin-top: -50px;
@@ -1904,7 +1929,7 @@ p.lesson-content {
 }
 
 /* DEsktop Styles */
-@media(min-width: 768px) {
+@media (min-width: 768px) {
   header.homeHeader {
     height: 93vh;
   }
@@ -1962,7 +1987,8 @@ p.lesson-content {
     padding: .3rem;
   }
 
-  nav.navbar ul.secondNav li a.active, nav.navbar ul.secondNav li a:hover {
+  nav.navbar ul.secondNav li a.active,
+  nav.navbar ul.secondNav li a:hover {
     border-bottom: 2px solid white;
   }
 
@@ -1994,15 +2020,16 @@ p.lesson-content {
     background-repeat: no-repeat;
     background-position: 0% 100%;
   }
- 
+
   main section.WhyChoose {
     background-image: url(./assets/icons/rainbowRight.svg);
     background-repeat: no-repeat;
     background-position: 100% 100%;
-  } 
+  }
 
   main section.CouplesSect {
-    background-image: url(./assets/icons/rainbow.svg), url(./assets/icons/rainbowRight.svg);
+    background-image: url(./assets/icons/rainbow.svg),
+      url(./assets/icons/rainbowRight.svg);
     background-repeat: no-repeat;
     background-position: 0% 0%, 100% 100%;
   }
@@ -2028,7 +2055,8 @@ p.lesson-content {
   }
 
   main section.academySection {
-    background-image: url(./assets/icons/rainbow.svg), url(./assets/icons/rainbowRight.svg);
+    background-image: url(./assets/icons/rainbow.svg),
+      url(./assets/icons/rainbowRight.svg);
     background-repeat: no-repeat;
     background-position: 0% 0%, 100% 75%;
   }
@@ -2043,7 +2071,8 @@ p.lesson-content {
     margin-block-end: 4rem;
   }
 
-  section.faq .firstArtSect, section.faq .secArtSect {
+  section.faq .firstArtSect,
+  section.faq .secArtSect {
     display: flex;
     margin-block-start: 2rem;
     gap: 6rem;
@@ -2090,9 +2119,9 @@ p.lesson-content {
     width: 100%;
     height: 450px;
     box-shadow: 0px 5px 27px 0px #00000012;
-    margin-block: 1rem 4rem
+    margin-block: 1rem 4rem;
   }
-  
+
   section.contactLine .contactConTainer aside.socialIne {
     width: 35%;
     flex-direction: column;
@@ -2104,15 +2133,14 @@ p.lesson-content {
     padding-block: 2rem;
     margin-block: unset;
   }
-  
+
   section.contactLine .contactConTainer aside.socialIne .socialAdd p {
     font-size: .8rem;
     font-family: var(--rokkitt);
     font-weight: 500;
     color: var(--white);
   }
-  
-  
+
   section.contactLine .contactConTainer form {
     width: 53%;
     height: 100%;
@@ -2120,7 +2148,7 @@ p.lesson-content {
     margin-block: unset;
     padding-block: 1.5rem;
   }
-  
+
   section.contactLine .contactConTainer form h3 {
     text-align: center;
     font-family: var(--rokkitt);
@@ -2128,16 +2156,16 @@ p.lesson-content {
     font-weight: 500;
     margin-block-end: 1.5rem;
   }
-  
+
   section.contactLine form input {
     height: 35px;
     font-size: 1.2rem;
   }
-  
+
   section.contactLine form textarea {
     font-size: 1.1rem;
   }
-    
+
   /* CTA Section */
   section.cta {
     height: 53vh;
@@ -2146,84 +2174,85 @@ p.lesson-content {
     font-size: 1.8rem;
     width: 100%;
   }
-  
+
   main section.cta p {
     font-size: 2rem;
     width: 50%;
     line-height: 40px;
   }
-  
+
   main section.homeCta button {
     padding: 0.5rem 1.1rem;
     font-size: 1rem;
   }
-  
+
   /* Footer Styles */
   footer.footer .footerWrap {
     display: flex;
   }
-  
+
   footer.footer .footerWrap .footerLogo {
     width: 40%;
     margin-inline-end: auto;
   }
-  
+
   footer.footer .footerWrap .footerLogo img {
     width: 25%;
     text-align: center;
   }
-  
+
   .footerWrap .footerLogo p {
     font-size: 1rem;
     font-weight: 400;
   }
-  
+
   footer.footer .footerWrap .footerLogo .footAdmin img {
     width: 7%;
   }
-  
+
   footer.footer .footerWrap .footLineDiVide {
     width: 0.5%;
     border-left: 2px solid var(--faq-bg);
   }
-  
+
   footer.footer .footerWrap .quickSocial {
     width: 45%;
     margin-inline: auto;
   }
-  
+
   .footerWrap .quickSocial .socialLiks li.socialIcons img {
     width: 50%;
   }
-  
+
   /* Blog STyles */
   main section.blogSectionOne {
-    background-image: url(./assets//icons/rainbowRight.svg), url(./assets/icons/rainbow.svg);
+    background-image: url(./assets//icons/rainbowRight.svg),
+      url(./assets/icons/rainbow.svg);
     background-repeat: no-repeat;
     background-position: 100% 0%, 0% 100%;
   }
-  
+
   section.blogSectionOne article .blogPic {
     margin-block: 1.5rem;
     width: 100%;
     height: 70vh;
   }
-  
+
   section.blogSectionOne .relateArtiCles {
     display: flex;
     gap: 2rem;
   }
-  
+
   main section.contactLine {
     margin-block: 1rem;
   }
-  
+
   section.contactLine form.formOne {
     width: 100%;
     box-shadow: 0px 5px 27px 0px #00000012;
     border-radius: 2px;
   }
-  
+
   section.contactLine form .replyWrap {
     display: flex;
     flex-direction: column;
@@ -2231,7 +2260,7 @@ p.lesson-content {
     margin-inline: auto;
     margin-block: 3rem;
   }
-  
+
   /* Academy Styles */
   section.sectEnroll article.acadFormSwiPer {
     display: flex;
@@ -2240,9 +2269,9 @@ p.lesson-content {
     width: 100%;
     height: 500px;
     box-shadow: 0px 5px 27px 0px #00000012;
-    margin-block-end: 4rem
+    margin-block-end: 4rem;
   }
-  
+
   section.sectEnroll article.acadFormSwiPer .oneOfUs {
     width: 35%;
     flex-direction: column;
@@ -2253,7 +2282,7 @@ p.lesson-content {
     margin-inline: unset;
     margin-block: unset;
   }
-  
+
   section.sectEnroll article.acadFormSwiPer section.contactLine {
     width: 53%;
     height: 100%;
@@ -2261,7 +2290,7 @@ p.lesson-content {
     margin-block: unset;
     padding-block: 1.5rem;
   }
-  
+
   /* Cart Styles */
   main .cartAllContain {
     display: grid;
@@ -2272,21 +2301,21 @@ p.lesson-content {
     top: -95px;
     right: -25px;
     width: 10%;
-}
-  
+  }
+
   .shopPop .ItemInfo .buyRent {
-  width: 40%;
-  font-size: 1rem;
+    width: 40%;
+    font-size: 1rem;
   }
-  
+
   .shopPop .ItemInfo button {
-  width: 100%;
-  font-size: 1rem;
-  gap: 0.5rem;
+    width: 100%;
+    font-size: 1rem;
+    gap: 0.5rem;
   }
-  
+
   .shopPop .ItemInfo button img {
-  width: 7%;
+    width: 7%;
   }
 
   /* CArt Popup */
@@ -2295,38 +2324,38 @@ p.lesson-content {
     top: 800px;
     box-shadow: 0px 5px 27px 800px #00000072;
   }
-  
+
   /* admin Styles */
   /* Admin Login */
   main section.adminLogin {
-  width: 50%;
-  margin-inline: auto;
-  padding-inline: 2rem;
-  margin-block: 4rem;
+    width: 50%;
+    margin-inline: auto;
+    padding-inline: 2rem;
+    margin-block: 4rem;
   }
-  
+
   /* Admin Dashboard */
   section.dashBoardSection h2 {
-  text-align: left;
-  margin-block-end: 3rem;
+    text-align: left;
+    margin-block-end: 3rem;
   }
-  
+
   section.dashBoardSection .grid-icons {
-  grid-template-columns: repeat(4, 1fr);
-  margin-block: 2rem 3rem;
-  gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    margin-block: 2rem 3rem;
+    gap: 2rem;
   }
 
   /* Profile */
   .ProfWrapp .profileWrap {
-  padding: 1rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 50%;
-  margin-inline: auto;
-  border-radius: 5px;
-  padding-block: 4rem;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin-inline: auto;
+    border-radius: 5px;
+    padding-block: 4rem;
   }
 
   .NewProd {
@@ -2365,7 +2394,7 @@ p.lesson-content {
     width: 40%;
     margin-block-end: 1rem;
   }
-  
+
   section.viewBlogWrap article p {
     font-family: var(--rokkitt);
     font-size: 1.5rem;
@@ -2393,7 +2422,7 @@ p.lesson-content {
     width: 70%;
     margin-inline: auto;
   }
-  
+
   aside.nav nav.container > ul {
     display: flex;
     flex-direction: column;
@@ -2403,18 +2432,18 @@ p.lesson-content {
     font-weight: 400;
     font-size: clamp(1rem, 1.3vw, 2.4rem);
   }
-  
+
   aside.nav nav.container > ul li:first-child {
     font-family: inherit;
     margin-block: 3.5rem 2.5rem;
   }
-  
+
   aside.nav nav.container > ul li a {
     display: flex;
     align-items: center;
     gap: 0.5rem;
   }
-  
+
   aside.nav nav.container > ul li a img {
     width: 30px;
   }
@@ -2468,7 +2497,7 @@ p.lesson-content {
   section.courses .courseSection article h2 {
     font-size: 1.2rem;
   }
-  
+
   section.courses .courseSection article p.source {
     font-size: .8rem;
     font-weight: 500;
@@ -2481,7 +2510,7 @@ p.lesson-content {
   .courseDetails li p {
     font-size: 1rem;
   }
-  
+
   .courseDetails li strong {
     font-size: 1.2rem;
   }
@@ -2634,7 +2663,7 @@ article img {
   color: #f4c542;
 }
 
-.ongoing-image{
+.ongoing-image {
   width: 40px;
   height: 40px;
 }
@@ -2719,4 +2748,127 @@ article img {
 .prev-btn:disabled {
   background: #ccc;
   cursor: not-allowed;
+}
+
+/* Profile.css */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #5c0002;
+}
+
+.profile-card {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #5c0002;
+  margin-bottom: 10px;
+}
+
+.profile-upload-label {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #5c0002;
+  color: white;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.profile-upload-label:hover {
+  background: #7d0003;
+}
+
+.profile-upload {
+  display: none;
+}
+
+.profile-field {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #f5f5f5;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: 0.3s;
+}
+
+.profile-field:hover {
+  border-color: #5c0002;
+}
+
+.profile-icon {
+  color: #5c0002;
+  font-size: 1.2em;
+  margin-right: 10px;
+}
+
+.profile-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 1em;
+  outline: none;
+}
+
+/* Enrollment and Progress Overview */
+.enrollment-progress {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.enrollment-box,
+.progress-box {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 180px;
+  justify-content: space-around;
+}
+
+.enrollment-icon,
+.progress-icon {
+  font-size: 24px;
+  color: #5c0002;
+}
+
+.enrollment-box h3,
+.progress-box h3 {
+  margin: 0;
+  font-size: 24px;
+  color: #5c0002;
+}
+
+.enrollment-box p,
+.progress-box p {
+  margin: 0;
+  font-size: 14px;
+  color: gray;
 }
