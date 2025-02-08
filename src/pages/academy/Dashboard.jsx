@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsStarFill, BsStar } from "react-icons/bs";
 import { FaSearch, FaFire } from "react-icons/fa";
 import courses from "../../data/Course";
@@ -28,10 +28,25 @@ const ongoingCourses = [
 ];
 
 const StudentDashboard = () => {
+  const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [seeAll, setSeeAll] = useState(false);
   const [streak, setStreak] = useState(5); // Example: 5-day streak
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleClick = (course) => {
     navigate(`course/${course.id}`, { state: { course } });
@@ -52,81 +67,103 @@ const StudentDashboard = () => {
   );
 
   return (
-    <section className="dashboard">
-      {/* Header */}
-      <header className="dashboard-header">
-        <h1>Welcome, Tosin Poppins</h1>
-        <p>Continue your learning journey</p>
-      </header>
-
-      {/* Learning Streak */}
-      <div className="streak">
-        <FaFire className="fire-icon" />
-        <span>You have a {streak}-day learning streak!</span>
-      </div>
-
-      {/* Search Bar */}
-      <div className="search-bar">
-        <FaSearch className="search-icon" />
-        <input
-          type="text"
-          placeholder="Search for courses..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-      </div>
-
-      {/* Continue Learning Section */}
-      <section className="continue-courses">
-        <h2>Continue Learning</h2>
-        <div className="courseSection">
-          {ongoingCourses.map((course) => (
-            <article key={course.id} onClick={() => handleClick(course)}>
-              <img src={image} className="ongoing-image" alt={course.title} />
-              <h2>{course.title}</h2>
-              <p>Progress: {course.progress}%</p>
-              <div className="progress-bar">
-                <div
-                  className="progress"
-                  style={{ width: `${course.progress}%` }}
-                ></div>
+    <>
+      {!isMobile && (
+        <header className="studentHeader">
+          <div className="headerWrapper">
+            <nav className="top-Header">
+              <h1>Dashboard</h1>
+              <div className="search-bar">
+                <FaSearch size={20} className="search-icon" />
+                <input
+                  placeholder="Search for courses..."
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
               </div>
-            </article>
-          ))}
+            </nav>
+          </div>
+        </header>
+      )}
+      <section className="dashboard studSection">
+        {/* Header */}
+        <header className="dashboard-header">
+          <h1>Welcome, Tosin Poppins</h1>
+          <p>Continue your learning journey</p>
+        </header>
+
+        {/* Learning Streak */}
+        <div className="streak">
+          <FaFire className="fire-icon" />
+          <span>You have a {streak}-day learning streak!</span>
         </div>
-      </section>
 
-      {/* New Courses Section */}
-      <section className="courses">
-        <nav className="studNav">
-          <ul>
-            <li>
-              <h2>New Courses</h2>
-            </li>
-            {filteredCourses.length > 3 && (
-              <li>
-                <p className="see-all" onClick={() => setSeeAll(!seeAll)}>
-                  {seeAll ? "Show Less" : "See All"}
-                </p>
-              </li>
-            )}
-          </ul>
-        </nav>
+        {/* Search Bar */}
+        {isMobile&& (
+        <div className="search-bar">
+          <FaSearch className="search-icon" />
+          <input
+            type="text"
+            placeholder="Search for courses..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
+        )}
 
-        <div className="courseSection">
-          {(seeAll ? filteredCourses : filteredCourses.slice(0, 3)).map(
-            (course) => (
+        {/* Continue Learning Section */}
+        <section className="continue-courses">
+          <h2>Continue Learning</h2>
+          <div className="courseSection">
+            {ongoingCourses.map((course) => (
               <article key={course.id} onClick={() => handleClick(course)}>
-                <img src={course.image} alt={course.title} />
+                <img src={image} className="ongoing-image" alt={course.title} />
                 <h2>{course.title}</h2>
-                <p className="source">{course.source}</p>
-                <div className="stars">{renderStars(course.rating)}</div>
+                <p>Progress: {course.progress}%</p>
+                <div className="progress-bar">
+                  <div
+                    className="progress"
+                    style={{ width: `${course.progress}%` }}
+                  ></div>
+                </div>
               </article>
-            )
-          )}
-        </div>
+            ))}
+          </div>
+        </section>
+
+        {/* New Courses Section */}
+        <section className="courses">
+          <nav className="studNav">
+            <ul>
+              <li>
+                <h2>New Courses</h2>
+              </li>
+              {filteredCourses.length > 3 && (
+                <li>
+                  <p className="see-all" onClick={() => setSeeAll(!seeAll)}>
+                    {seeAll ? "Show Less" : "See All"}
+                  </p>
+                </li>
+              )}
+            </ul>
+          </nav>
+
+          <div className="courseSection">
+            {(seeAll ? filteredCourses : filteredCourses.slice(0, 3)).map(
+              (course) => (
+                <article key={course.id} onClick={() => handleClick(course)}>
+                  <img src={course.image} alt={course.title} />
+                  <h2>{course.title}</h2>
+                  <p className="source">{course.source}</p>
+                  <div className="stars">{renderStars(course.rating)}</div>
+                </article>
+              )
+            )}
+          </div>
+        </section>
       </section>
-    </section>
+    </>
   );
 };
 

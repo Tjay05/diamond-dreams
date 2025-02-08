@@ -37,91 +37,93 @@ const AcademyWrapper = () => {
 
   return (
     <>
-    {showPorofile && <ProfilePage setProfile={setProfile}/>}
-    {isMobile && (
-      <header className='homeHeader acadedmy-home-header'>
-        <div className="headerContainer">
-          <nav className={`dropNav ${toggleNav ? 'active' : ''}`}>
-            <div className="rule">
-              <img 
-                onClick={handleNavToggle}
-                className= "closIcon" 
-                src={closeIcon} 
-                alt="Close" 
-              />
-              <ul>
-                <li><NavLink onClick={() => Window.reload()} to='/Student'>Dashboard</NavLink></li>
-                <li><NavLink onClick={handleNavToggle} to=''>All courses</NavLink></li>
-                <li><NavLink onClick={handleNavToggle} to=''>My Courses</NavLink></li>
-                <li><NavLink onClick={handleNavToggle} to=''>Profile</NavLink></li>
-              </ul>
-            </div>
-          </nav>
-          <nav className="navbar rule">
-            <ul className='topNav'>
-              <li>
-                <img src={LightLogo} alt="Logo" />
-                <p>Diamonddreams Event</p>
-              </li>
-              <li>
+      {showPorofile && <ProfilePage setProfile={setProfile}/>}
+      {isMobile && (
+        <header className='homeHeader acadedmy-home-header'>
+          <div className="headerContainer">
+            <nav className={`dropNav ${toggleNav ? 'active' : ''}`}>
+              <div className="rule">
                 <img 
-                  src={navIcon} 
-                  alt="Hamburger" 
                   onClick={handleNavToggle}
+                  className= "closIcon" 
+                  src={closeIcon} 
+                  alt="Close" 
                 />
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-    )}
-    <main className="rule academy-container">
-      {!isMobile && <aside className='nav'>
-        <nav className="container">
-          <ul>
-            <li>
-              <a>
-                <img src={LightLogo} alt="Logo" />
-                <p>Diamond Dreams</p>
-              </a>
-            </li>
-            <li>
-              <NavLink to='/Student'>Dashboard</NavLink>
-            </li>
-            <li>
-              <NavLink>All Courses</NavLink>
-            </li>
-            <li>
-              <NavLink>My Courses</NavLink>
-            </li>
-            <li>
-              <NavLink>Profile</NavLink>
-            </li>
-          </ul>
-        </nav>
-      </aside>}
-      <section className='student-outlet'>
-        <Outlet/>
-      </section>
-    </main>
-    {/* <footer className='footer'>
-      <div className="footerWrap rule">
-        <div className="footerLogo">
-          <img src={darkLogo} alt="Logo" />
-          <h2>Diamonddreams events</h2>
-          <p>
-            From stunning gowns to captivating accessories, our selection offers both purchasing and rental options, ensuring every bride finds her perfect match.
-          </p>
-          <div className="footAdmin">
-            <img src={lightAcc} alt="Admin" />
-            <p>Student</p>
+                <ul>
+                  <li><NavLink onClick={() => Window.reload()} to='/Student'>Dashboard</NavLink></li>
+                  <li><NavLink onClick={handleNavToggle} to=''>All courses</NavLink></li>
+                  <li><NavLink onClick={handleNavToggle} to=''>My Courses</NavLink></li>
+                  <li><NavLink onClick={handleNavToggle} to=''>Profile</NavLink></li>
+                </ul>
+              </div>
+            </nav>
+            <nav className="navbar rule">
+              <ul className='topNav'>
+                <li>
+                  <img src={LightLogo} alt="Logo" />
+                  <p>Diamonddreams Event</p>
+                </li>
+                <li>
+                  <img 
+                    src={navIcon} 
+                    alt="Hamburger" 
+                    onClick={handleNavToggle}
+                  />
+                </li>
+              </ul>
+            </nav>
           </div>
+        </header>
+      )}
+      <main className="rule academy-container">
+        {!isMobile && (
+          <aside className='nav'>
+            <nav className="container">
+              <ul>
+                <li>
+                  <a>
+                    <img src={LightLogo} alt="Logo" />
+                    <p>Diamond Dreams</p>
+                  </a>
+                </li>
+                <li>
+                  <NavLink to='/Student'>Dashboard</NavLink>
+                </li>
+                <li>
+                  <NavLink>All Courses</NavLink>
+                </li>
+                <li>
+                  <NavLink>My Courses</NavLink>
+                </li>
+                <li>
+                  <NavLink>Profile</NavLink>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+        )}
+        <section className='student-outlet'>
+          <Outlet/>
+        </section>
+      </main>
+      {/* <footer className='footer'>
+        <div className="footerWrap rule">
+          <div className="footerLogo">
+            <img src={darkLogo} alt="Logo" />
+            <h2>Diamonddreams events</h2>
+            <p>
+              From stunning gowns to captivating accessories, our selection offers both purchasing and rental options, ensuring every bride finds her perfect match.
+            </p>
+            <div className="footAdmin">
+              <img src={lightAcc} alt="Admin" />
+              <p>Student</p>
+            </div>
+          </div>
+          {isMobile&& <hr />}
+          {!isMobile && <div className='footLineDiVide'></div>}
         </div>
-        {isMobile&& <hr />}
-        {!isMobile && <div className='footLineDiVide'></div>}
-      </div>
-      <p className='copyRight'>Copyright. All Rights Reserved</p>
-    </footer> */}
+        <p className='copyRight'>Copyright. All Rights Reserved</p>
+      </footer> */}
     </>
   );
 }
