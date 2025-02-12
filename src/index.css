@@ -2310,7 +2310,6 @@ article img {
     align-items: flex-start;
     height: 100%;
     text-align: unset;
-    /* margin-inline-start: 4.3rem; */
   }
 
   header.homeHeader .headerContainer .landContainer p {
