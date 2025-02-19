@@ -84,7 +84,7 @@ const ShopPopUp = ({ bouquetPopup, accessoryPopup, gownPopup, setAccessoryPopup,
         </div>
         <div className="itemPrice">
           <p>Price</p>
-          <p>₦ {shop.price}</p>
+          <p>₦ {shop.price} </p>
         </div>
         <div className="itemQuant">
           <p>Quantity</p>
