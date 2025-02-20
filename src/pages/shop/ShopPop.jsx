@@ -66,7 +66,6 @@ const ShopPopUp = ({ bouquetPopup, accessoryPopup, gownPopup, setAccessoryPopup,
     const existingCartItems = JSON.parse(localStorage.getItem("cart")) || [];
     // Add the new item to the existing cart items
     const updatedCartItems = [...existingCartItems, itemToAdd];
-    // Save the updated cart items to local storage
     localStorage.setItem("cart", JSON.stringify(updatedCartItems));
     // Optionally, you can display a confirmation message or perform any other action
     window.location.reload();
