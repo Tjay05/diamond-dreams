@@ -71,7 +71,7 @@ const StudentDashboard = () => {
       )}
       <section className="dashboard studSection">
         <header className="dashboard-header">
-          <h1>Welcome, Tosin Poppins</h1>
+          <h1>Welcome, Toppins</h1>
           <p>Continue your learning journey</p>
         </header>
 
