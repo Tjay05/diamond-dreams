@@ -78,7 +78,7 @@ const StudentDashboard = () => {
         {/* Learning Streak */}
         <div className="streak">
           <FaFire className="fire-icon" />
-          <span>You have a {streak}-day learning streak, Good!</span>
+          <span>You have a {streak}-day learning streak, Good Job!</span>
         </div>
 
         {/* Enrollment and Progress Overview */}
