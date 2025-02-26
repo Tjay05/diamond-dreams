@@ -48,7 +48,7 @@ const eleganceInBeauty = {
       ]
     }
   ],
-  source: "Tjay's Institute of Fashion"
+  source: "Poppin's L'Boutique"
 };
 
 
