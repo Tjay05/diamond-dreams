@@ -25,7 +25,7 @@ const Navbar = () => {
     setCartItems(storedCartItems);
   }, []); // Run this effect only once when component mounts
   
-  // console.log(cartItems.length)
+
 
   const handleNavToggle = () => {
     setToggleNav(!toggleNav);
