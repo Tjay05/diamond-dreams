@@ -98,7 +98,7 @@ const artInFashion = {
       ]
     }
   ],
-  source: "Tjay's Institue of Art"
+  source: "Tjay's Institue of Fashion"
 };
 
 const courses = { eleganceInBeauty, artInFashion };
